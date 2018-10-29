@@ -11,7 +11,6 @@ void Network::resize(const size_t& n){
   RNG.normal(values, 0, 1);
 }
 
-//Mauvaise conditions
 bool Network::add_link(const size_t& first, const size_t& second){
   bool exists(false);
   vector<size_t> connections(neighbors(first));
@@ -28,7 +27,7 @@ bool Network::add_link(const size_t& first, const size_t& second){
   } else { return false; }
 }
 
-//not right
+
 size_t Network::random_connect(const double& mean){
   links.clear();
   size_t connect(0);
@@ -40,7 +39,7 @@ size_t Network::random_connect(const double& mean){
   int size(random_nodes.size());
   for(int i(0); i< size;++i){
     int poisson(RNG.poisson(mean));
-    for(int j(1);j <= poisson;++j){
+    for(int j(0);j<poisson;++j){
       if(add_link(random_nodes[random_nodes.size()-1],j)){
         ++connect;
       }
