@@ -22,10 +22,6 @@ bool Network::add_link(const size_t& first, const size_t& second){
   }
   if((first<values.size()) and (second<values.size()) and (first!=second)
   and (!exists)){
-    //  auto order1(links.find(first));
-      //auto order2(links.find(second));
-      //links.insert(order1,make_pair(first,second));
-      //links.insert(order2,make_pair(second,first));
       links.insert(make_pair(first,second));
       links.insert(make_pair(second,first));
     return true;
