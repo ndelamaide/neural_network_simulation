@@ -36,11 +36,11 @@ size_t Network::random_connect(const double& mean){
     random_nodes[i]=i;
   }
   RNG.shuffle(random_nodes);
-  int size(random_nodes.size());
-  for(int i(0); i< size;++i){
-    int poisson(RNG.poisson(mean));
-    for(int j(0);j<poisson;++j){
-      if(add_link(random_nodes[random_nodes.size()-1],j)){
+  size_t size(random_nodes.size());
+  for(size_t i(0); i< size;++i){
+    size_t poisson(RNG.poisson(mean));
+    for(size_t j(0);j<poisson;++j){
+      if(add_link(random_nodes.back(), random_nodes[j])){
         ++connect;
       }
     }
